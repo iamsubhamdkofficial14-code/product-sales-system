@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Sales System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1 class="title">PRODUCT SALES SYSTEM</h1>
+
+
+    <!-- Add Product Form -->
+
+    <div class="form-box">
+
+        <h2>Add New Product</h2>
+
+        <form action="/add" method="POST">
+
+            <input type="text" name="id" placeholder="Product ID" required>
+
+            <input type="text" name="name" placeholder="Product Name" required>
+
+            <input type="number" name="quantity"
+                   placeholder="Quantity" required>
+
+            <input type="number" name="price"
+                   placeholder="Price per Unit" required>
+
+            <button type="submit">
+                Add Product
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Sales Table -->
+
+    <table>
+
+        <tr class="heading">
+
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity Sold</th>
+            <th>Price per Unit (₹)</th>
+            <th>Total Sales (₹)</th>
+
+        </tr>
+
+
+        {% for product in products %}
+
+        <tr>
+
+            <td>{{ product.id }}</td>
+
+            <td>{{ product.name }}</td>
+
+            <td>{{ product.quantity }}</td>
+
+            <td>₹{{ "{:,}".format(product.price) }}</td>
+
+            <td>₹{{ "{:,}".format(product.total) }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+    <!-- Total Sales -->
+
+    <div class="total-box">
+
+        <h2>Total Sales</h2>
+
+        <h1>₹{{ "{:,}".format(total_sales) }}</h1>
+
+    </div>
+
+
+    <!-- Project Description -->
+
+    <div class="project-info">
+
+        <h2>About the Project</h2>
+
+        <p>
+            This project is a Product Sales Management System developed
+            using HTML, CSS, JavaScript and Python Flask.
+        </p>
+
+        <p>
+            It displays product information such as product ID,
+            product name, quantity sold, price per unit and total sales.
+            Python automatically calculates the total sales based on
+            quantity and price.
+        </p>
+
+        <p>
+            The system also allows users to add new products through
+            an interactive form. This project demonstrates the basic
+            use of frontend and backend technologies in web development.
+        </p>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
