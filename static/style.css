@@ -1,0 +1,129 @@
+body {
+    background: linear-gradient(135deg, #071a3d, #4a124f, #831843);
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+h2 {
+    color: #ffe600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #182848;
+}
+
+th,
+td {
+    border: 2px solid #00ffff;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(135deg, #ff0080, #ff8c00);
+    color: white;
+}
+
+td {
+    color: white;
+}
+
+tr:nth-child(2) td {
+    background: #173f5f;
+}
+
+tr:nth-child(3) td {
+    background: #1d5c63;
+}
+
+tr:nth-child(4) td {
+    background: #315c3a;
+}
+
+tr:nth-child(5) td {
+    background: #59436b;
+}
+
+tr:nth-child(6) td {
+    background: #704214;
+}
+
+tr:nth-child(7) td {
+    background: #3b4d7a;
+}
+
+tr:nth-child(8) td {
+    background: #69305c;
+}
+
+tr:nth-child(9) td {
+    background: #145c54;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    background: #182848;
+    color: white;
+    border: 2px solid #00ffff;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff0080, #ff8c00);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bubble {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff00aa88,
+            #00e5ff88
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation-name: float;
+}
+
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
